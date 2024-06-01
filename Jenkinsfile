@@ -7,12 +7,17 @@ pipeline {
     }
 
     stages{
+        stage('Check') {
+            date 
+            echo 'Committed from ${GIT_LOCAL_BRANCH} branch'
+            echo 'Build ID : ${BUILD_ID}'
+            echo 'Build URL : ${BUILD_URL}' 
+        }
         stage('Run Python Script') {
             step {
                 sh 'python3 ${PYTHON_FILE}'
             }
         }
-
         stage('Run Python Script') {
             step {
                 sh 'node ${JAVASCRIPT_FILE}'
