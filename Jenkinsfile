@@ -23,5 +23,10 @@ pipeline {
                 sh 'node ${JAVASCRIPT_FILE}'
             }
         }
+        stage('Slack') {
+            step {
+                slackSend message: 'Done! Testing Python and JavaScript script : )'
+            }
+        }
     }
 }
