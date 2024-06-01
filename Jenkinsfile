@@ -10,7 +10,7 @@ pipeline {
         stage('Check') {
             steps {
                 sh 'date'
-                echo "Committed from ${GIT_LOCAL_BRANCH} branch"
+                echo "Committed from ${GIT_BRANCH} branch"
                 echo "Build ID : ${BUILD_ID}"
                 echo "Build URL : ${BUILD_URL}"
             }
