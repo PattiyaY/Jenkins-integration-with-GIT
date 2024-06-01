@@ -8,7 +8,7 @@ pipeline {
 
     stages{
         stage('Check') {
-            date 
+            sh 'date'
             echo 'Committed from ${GIT_LOCAL_BRANCH} branch'
             echo 'Build ID : ${BUILD_ID}'
             echo 'Build URL : ${BUILD_URL}' 
@@ -18,14 +18,14 @@ pipeline {
                 sh 'python3 ${PYTHON_FILE}'
             }
         }
-        stage('Run Python Script') {
+        stage('Run JS Script') {
             step {
                 sh 'node ${JAVASCRIPT_FILE}'
             }
         }
         stage('Slack') {
             step {
-                slackSend message: 'Done! Testing Python and JavaScript script : )'
+                sh 'slackSend message: /'Done! Testing Python and JavaScript script/''
             }
         }
     }
