@@ -7,6 +7,11 @@ pipeline {
     }
 
     stages {
+        stage('Build'){
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Check') {
             steps {
                 sh 'date'
