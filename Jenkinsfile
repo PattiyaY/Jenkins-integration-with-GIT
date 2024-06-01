@@ -6,26 +6,28 @@ pipeline {
         JAVASCRIPT_FILE = 'helloworld.js'
     }
 
-    stages{
+    stages {
         stage('Check') {
-            sh 'date'
-            echo 'Committed from ${GIT_LOCAL_BRANCH} branch'
-            echo 'Build ID : ${BUILD_ID}'
-            echo 'Build URL : ${BUILD_URL}' 
+            steps {
+                sh 'date'
+                echo "Committed from ${GIT_LOCAL_BRANCH} branch"
+                echo "Build ID : ${BUILD_ID}"
+                echo "Build URL : ${BUILD_URL}"
+            }
         }
         stage('Run Python Script') {
-            step {
+            steps {
                 sh 'python3 ${PYTHON_FILE}'
             }
         }
         stage('Run JS Script') {
-            step {
+            steps {
                 sh 'node ${JAVASCRIPT_FILE}'
             }
         }
         stage('Slack') {
-            step {
-                sh 'slackSend message: /'Done! Testing Python and JavaScript script/''
+            steps {
+                slackSend message: 'Done! Testing Python and JavaScript script'
             }
         }
     }
