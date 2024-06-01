@@ -1,0 +1,20 @@
+{
+  "name": "jenkins-integration-with-git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloworld.js",
+  "scripts": {
+    "test": "node helloworld.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PattiyaY/Jenkins-integration-with-GIT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PattiyaY/Jenkins-integration-with-GIT/issues"
+  },
+  "homepage": "https://github.com/PattiyaY/Jenkins-integration-with-GIT#readme"
+}
