@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Build'){
-            steps {
-                sh 'npm install'
-            }
-        }
         stage('Check') {
             steps {
                 sh 'date'
@@ -25,9 +20,9 @@ pipeline {
                 sh 'python3 ${PYTHON_FILE}'
             }
         }
-        stage('Run JS Script') {
+        stage('Read JavaScript file') {
             steps {
-                sh 'node ${JAVASCRIPT_FILE}'
+                sh 'cat ${JAVASCRIPT_FILE}'
             }
         }
         stage('Slack') {
