@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Slack') {
             steps {
-                slackSend message: 'Done! Testing Python and JavaScript script'
+                slackSend message: 'Done! Testing Python and Reading JavaScript file'
             }
         }
     }
